@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Descripción película</title>
+        <link rel="stylesheet" type="text/css" href="../CSS/stylesPeliculas.css" >
+        <script src="https://kit.fontawesome.com/ca24336b47.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="fondo">
+        <div class="background">
+            <div class="transbox">
+                <section>
+                    <h1 id="tituloPelicula"></h1>
+                        <div class="sinopsis">
+                            <h2 class="detalles">Sinopsis</h2>
+                                <p id="sinopsisPelicula" class="contenido"></p>
+                                <hr>
+                        </div>
+                          <div class="informacion">
+                            <div class="detalles">DURACIÓN</div>
+                            <div id="duracion" class="contenido"></div>
+                            <div class="detalles">GÉNERO</div>
+                            <div id="genero" class="contenido">Drama</div>
+                          </div>
+                </section>
+            </div>
+        </div>
+          <div class="video">
+          <iframe id="trailerPelicula" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+            <div class="box">
+              <figure>
+                <a href="#">
+                  <img src="../IMG/CineUsurbil.png" alt="logo cine Usurbil">                
+                </a>
+              </figure>
+            </div>
+            <div class="box">
+              <h2>SIGUENOS</h2>
+              <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-youtube"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grupo-2">
+            <small class="licensia"> 2023 <b>Cines Usurbil</b> - Todos los Derechos Reservados. <a href="http://creativecommons.org/licenses/by-nd/4.0/?ref=chooser-v1" target="_blank"
+              rel="license noopener noreferrer">CC BY-ND 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"alt="licencia">
+                                                            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="licencia"> 
+                                                            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"alt="licencia"></a>
+            </small> 
+          </div>          
+          </footer>
+
+          <script>
+          // Capturamos la dirección de la barra de navegación y conseguimos el ID recibido como
+          // parámetro haciendo un "split".
+            let url = window.location.href;
+            console.log(url)
+            let corte = url.split("=");
+            let id = corte[1];
+            console.log(id);
+          
+          // Recuperamos objeto JSON del localStorage e insertamos en el html
+          // las variables que nos interesan.
+
+            const miJson=localStorage.getItem("misPelis");
+            const listaPeliculas = JSON.parse(miJson);          
+                        
+          // Insertamos el título
+            let tituloPelicula = document.getElementById("tituloPelicula");
+            tituloPelicula.innerHTML = listaPeliculas.pelis[id].titulo; 
+
+          // Insertamos la sinopsis
+            let sinopsisPelicula = document.getElementById("sinopsisPelicula");
+            sinopsisPelicula.innerHTML = listaPeliculas.pelis[id].sinopsis; 
+          
+          // Insertamos la duración
+            let duracionPelicula = document.getElementById("duracion");
+            duracion.innerHTML = listaPeliculas.pelis[id].duracion;
+
+          // Insertamos el género
+           let genero = document.getElementById("genero");
+           genero.innerHTML = listaPeliculas.pelis[id].genero;
+
+          // Insertamos el trailer
+            let trailerPelicula = document.getElementById("trailerPelicula");
+            let trailer = listaPeliculas.pelis[id].trailer;
+            trailerPelicula.setAttribute("src",listaPeliculas.pelis[id].trailer);
+          
+          // Insertamos la URL del fondo
+            let fondo = document.getElementById("fondo");
+            fondo.setAttribute("background",listaPeliculas.pelis[id].fondo);
+            console.log(listaPeliculas.pelis[id].fondo);
+
+          </script>
+    </body>
+</html>

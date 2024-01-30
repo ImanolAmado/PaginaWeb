@@ -1,0 +1,162 @@
+<!-- LIQUIDPAPER
+* En esta página hemos añadido un "id" a cada imagen y el atributo
+* "onclick". De esta manera, sabemos dónde ha hecho "click" el usuario
+* y podemos abrir una única página de pelicula cargando datos del objeto
+* json correspondiente en una plantilla.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
+    <title>Cine Usurbil</title>
+    <script src="https://kit.fontawesome.com/ca24336b47.js" crossorigin="anonymous"></script>
+    <script src="listaPeliculas.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="../IMG/CineUsurbil.png" alt="Logo cine">
+        <h1>CINES USURBIL</h1>
+        <input type="checkbox" id="check">
+        <label id="mostrar" for="check" class="mostrar-menu">
+            &#8801;
+        </label>
+        <nav class="Menu">
+            <a href="../HTML/index.html">INICIO</a>
+            <a href="../HTML/cartelera.html">CARTELERA</a>
+            <a href="../HTML/peliculas.html" id="activo">PELÍCULAS</a>
+            <a href="../HTML/cines.html">CINES</a>
+            <a href="../HTML/login1.html">INICIAR SESIÓN</a>
+            <label id="esconder" for="check" class="esconder-menu">
+                &#215;
+            </label>
+        </nav>
+    </header>
+    <article>
+        <div>
+            <h2>DRAMA</h2>
+        </div>
+        <!-- Hemos eliminado los enlaces directos. El enlace se abrirá en la función "enviarPelicula".
+        También hemos añadido la clase "clickable", así, usando CSS conseguimos que aparezca "la mano" al 
+        pasar por encima de la imagen indicando que se puede "pinchar".-->
+        <section class="flex_container">
+            <div class="caja">
+                <img class="clickable" id="0" onclick="enviarPelicula(event)" src="../IMG/POSTER/pHandia.jpg"
+                    title="Handia">
+            </div>
+            <div class="caja">
+                <img class="clickable" id="1" onclick="enviarPelicula(event)" src="../IMG/POSTER/pLaLista.jpg"
+                    title="La lista de Schindler">
+            </div>
+            <div class="caja">
+                <img class="clickable" id="2" onclick="enviarPelicula(event)" src="../IMG/POSTER/pCadenaPerpetua.jpg"
+                    title="Cadena Perpetua">
+            </div>
+            <div class="caja">
+                <img class="clickable" id="3" onclick="enviarPelicula(event)" src="../IMG/POSTER/pMillionDollar.jpg"
+                    title="Million Dollar Baby">
+            </div>
+        </section>
+        <div>
+            <h2>SCI-FI</h2>
+        </div>
+        <section class="flex_container">
+            <div class="caja">
+                <img class="clickable" id="4" onclick="enviarPelicula(event)" src="../IMG/POSTER/Odisea.jpg" title="2001, Odisea en el espacio">
+            </div>
+            <div class="caja">
+               <img class="clickable" id="5" onclick="enviarPelicula(event)" src="../IMG/POSTER/Lanovia.jpg" title="La noviade Frankenstein">
+            </div>
+            <div class="caja">
+               <img class="clickable" id="6" onclick="enviarPelicula(event)" src="../IMG/POSTER/simios.jpg" title="El planeta de los simios">
+            </div>
+            <div class="caja">
+                <img class="clickable" id="7" onclick="enviarPelicula(event)" src="../IMG/POSTER/alien.jpg" title="Alien, el octavo pasajero">
+            </div>
+        </section>
+        <div>
+            <h2>COMEDIA</h2>
+        </div>
+        <section class="flex_container">
+            <div class="caja">
+                <img class="clickable" id="8" onclick="enviarPelicula(event)" src="../IMG/POSTER/scary.jpg" title="Scary movie">
+            </div>
+            <div class="caja">
+             <img class="clickable" id="9" onclick="enviarPelicula(event)" src="../IMG/POSTER/lebowski.jpg" title="El gran Lebowsky">
+            </div>
+            <div class="caja">
+               <img class="clickable" id="10" onclick="enviarPelicula(event)" src="../IMG/POSTER/brian.jpg" title="La vida de Brian">
+            </div>
+            <div class="caja">
+                <img class="clickable" id="11" onclick="enviarPelicula(event)" src="../IMG/POSTER/aterriza.jpg" title="Aterriza como puedas">
+            </div>
+        </section>
+        <div>
+            <h2>TERROR</h2>
+        </div>
+        <section class="flex_container">
+            <div class="caja">
+             <img class="clickable" id="12" onclick="enviarPelicula(event)"
+                        src="../IMG/POSTER/Psicosis.jpg" title="Psicosis">
+            </div>
+            <div class="caja">
+               <img class="clickable" id="13" onclick="enviarPelicula(event)"
+                        src="../IMG/POSTER/resplandor.jpg" title="El resplandor">
+            </div>
+            <div class="caja">
+              <img class="clickable" id="14" onclick="enviarPelicula(event)"
+                        src="../IMG/POSTER/dracula.jpg" title="Drácula">
+            </div>
+            <div class="caja">
+              <img class="clickable" id="15" onclick="enviarPelicula(event)"
+                        src="../IMG/POSTER/cisne.jpg" title="Cisne negro">
+            </div>
+        </section>
+    </article>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="../IMG/CineUsurbil.png" alt="logo cine Usurbil">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small class="licensia"> 2023 <b>Cines Usurbil</b> - Todos los Derechos Reservados. <a
+                    href="http://creativecommons.org/licenses/by-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer">CC BY-ND 4.0<img
+                        src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="licencia">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="licencia">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"
+                        alt="licencia"></a>
+            </small>
+        </div>
+    </footer>
+
+    <script>
+    // Función para capturar el ID desde donde se ha accionado el evento "onclick".
+    // Además, abrimos una nueva página enviando como parámetro el ID. 
+        function enviarPelicula(event) {
+            let id = event.target.id;            
+            window.location.href = "../HTML/pelicula.html?id=" + id;
+        }
+    </script>
+
+</body>
+
+</html>
